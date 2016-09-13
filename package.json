@@ -1,6 +1,6 @@
 {
   "name": "@kospa/dialog",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Dialog component for kospa framework",
   "homepage": "https://github.com/spatools/kospa-dialog",
   "author": "Touchify (dev@touchify.co)",
@@ -13,6 +13,11 @@
   "bugs": {
     "url": "https://github.com/spatools/kospa-dialog/issues"
   },
+  "files": [
+    "index.js",
+    "index.d.ts",
+    "package.json"
+  ],
   "scripts": {
     "test": "npm run build",
     "build": "tsc -p .",
