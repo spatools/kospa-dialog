@@ -2,7 +2,7 @@
   "name": "kospa-dialog",
   "version": "0.1.0",
   "description": "Dialog component for kospa framework",
-  "homepage": "https://github.com/spatools/kospa-dialog",
+  "homepage": "https://github.com/spatools/kospa-dialog#readme",
   "author": "Touchify (dev@touchify.co)",
   "license": "MIT",
   "main": "index.js",
