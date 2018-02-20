@@ -3,6 +3,8 @@ import * as activator from "@kospa/base/activator";
 import * as composer from "@kospa/base/composer";
 import { extend, deferred, Deferred } from "@kospa/base/system";
 
+let undef;
+
 export interface DialogDefaults {
     id?: string;
     template?: string;
@@ -56,7 +58,7 @@ export function close(id: string, result?: any): Promise<void> {
     const opts = opened[id];
 
     if (!opts) {
-        return Promise.resolve<void>();
+        return Promise.resolve<void>(undef);
     }
 
     return activator.deactivate(opts.viewmodel as activator.ViewModel)
