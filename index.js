@@ -1,16 +1,19 @@
 (function (factory) {
-    if (typeof module === 'object' && typeof module.exports === 'object') {
-        var v = factory(require, exports); if (v !== undefined) module.exports = v;
+    if (typeof module === "object" && typeof module.exports === "object") {
+        var v = factory(require, exports);
+        if (v !== undefined) module.exports = v;
     }
-    else if (typeof define === 'function' && define.amd) {
+    else if (typeof define === "function" && define.amd) {
         define(["require", "exports", "knockout", "@kospa/base/activator", "@kospa/base/composer", "@kospa/base/system"], factory);
     }
 })(function (require, exports) {
     "use strict";
+    Object.defineProperty(exports, "__esModule", { value: true });
     var ko = require("knockout");
     var activator = require("@kospa/base/activator");
     var composer = require("@kospa/base/composer");
     var system_1 = require("@kospa/base/system");
+    var undef;
     var doc = document, opened = {};
     exports.defaults = {
         container: defaultContainer(),
@@ -34,7 +37,7 @@
     function close(id, result) {
         var opts = opened[id];
         if (!opts) {
-            return Promise.resolve();
+            return Promise.resolve(undef);
         }
         return activator.deactivate(opts.viewmodel)
             .then(function () { return opts.close(opts); })
@@ -90,7 +93,7 @@
     function generateId() {
         return Math.round(Math.random() * 100000000).toString(36);
     }
-    var TemplateViewModel = (function () {
+    var TemplateViewModel = /** @class */ (function () {
         function TemplateViewModel() {
             var _this = this;
             this.viewmodel = ko.observable();
